@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 import time
+
 import pytest
-from credentials import Credentials
-from application import Application
-from mail import Mail
+
+from fixture.application import Application
+from model.credentials import Credentials
+from model.mail import Mail
 
 
 @pytest.fixture
@@ -25,4 +27,3 @@ def test_another_subject_Mail(app):
     app.field_and_send_message(Mail(email="slyaquarius@rambler.ru", subject="ALERT! ALERT!"))
     time.sleep(1)
     app.logout()
-
